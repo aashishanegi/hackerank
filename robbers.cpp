@@ -54,5 +54,24 @@ int maxflow(int s = 1, int t = N){
     }
     return flow;
 }
+int main(){
+    scanf("%d %d", &N, &M);
+    for(int i = 0, a, b; i < M; i++){
+        scanf("%d %d", &a, &b);
+        G[a].push_back(b);
+        G[b].push_back(a);
+        cap[a][b]++;
+        cap[b][a]++;
+    }
+    printf("%d\n", maxflow());
+
+    dfs();
+    for(int u = 1; u <= N; u++){
+        if(!vis[u]) continue;
+        for(int v : G[u])
+            if(!vis[v])
+                printf("%d %d\n", u, v);
+    }
+}
 
 
