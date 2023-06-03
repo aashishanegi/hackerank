@@ -30,4 +30,11 @@ int main(){
         }
     }
 
-    
+    for(int i = 1; i <= N; i++)
+        rooms = max(rooms, ans[i]);
+
+    printf("%d\n", rooms);
+    for(int i = 1; i <= N; i++)
+        printf("%d%c", ans[i], (" \n")[i==N]);
+}
+
