@@ -25,25 +25,4 @@ int getMinSquares(unsigned int n)
     // is n (1*1 + 1*1 + ..)
     int res = n;
 
-    // Go through all smaller numbers
-    // to recursively find minimum
-    for (int x = 1; x <= n; x++)
-    {
-        int temp = x * x;
-        if (temp > n)
-            break;
-        else
-            res = min(res, 1 + getMinSquares
-                                (n - temp));
-    }
-    return res;
-}
-
-// Driver code
-int main()
-{
-    int n;
-    cin>>n;
-    cout << getMinSquares(n);
-    return 0;
-}
+   
